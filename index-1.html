@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ИИ в XXI веке</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#090b1c;--surface:#141831;--surface2:#1b2141;--ink:#f4f5ff;--muted:#b2b9d7;--line:rgba(190,198,255,.16);--purple:#8175ff;--pink:#ff6bb4;--cyan:#62e7e0;--yellow:#ffe27a;--max:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(111,91,255,.2),transparent 38%),radial-gradient(ellipse at 0% 42%,rgba(39,196,205,.09),transparent 32%),var(--bg);color:var(--ink);font:400 16px/1.7 Manrope,system-ui,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}h1,h2,h3{font-family:Rubik,system-ui,sans-serif;line-height:1.12;margin:0}h2{font-size:clamp(30px,4.5vw,48px);letter-spacing:-.035em;margin-bottom:14px}h3{font-size:21px;margin-bottom:9px}p{margin:0 0 12px;max-width:66ch;color:var(--muted)}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(9,11,28,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font:800 18px Rubik,sans-serif;letter-spacing:-.04em}.brand span{color:var(--cyan)}.navlinks{display:flex;gap:24px;font-size:13px;color:var(--muted)}.navlinks a:hover{color:#fff}
+.hero{position:relative;overflow:hidden;padding:94px 0 88px;background:linear-gradient(120deg,rgba(37,31,104,.92),rgba(15,19,48,.78) 62%,rgba(15,57,72,.65));border-bottom:1px solid var(--line)}.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none}.hero:before{width:420px;height:420px;right:-100px;top:-180px;background:radial-gradient(circle,rgba(129,117,255,.35),transparent 68%)}.hero:after{width:300px;height:300px;right:20%;bottom:-230px;background:radial-gradient(circle,rgba(98,231,224,.18),transparent 70%)}.hero-inner{position:relative;z-index:1}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 13px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.07);color:#dcdcff;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}.hero .big{font:800 clamp(120px,26vw,290px)/.82 Rubik,sans-serif;letter-spacing:-.09em;color:transparent;-webkit-text-stroke:2px rgba(255,226,122,.85);margin:34px 0 25px}.hero h1{font-size:clamp(32px,5.3vw,62px);max-width:850px;letter-spacing:-.045em}.hero p{font-size:18px;max-width:670px;margin-top:22px;color:#d3d8f3}.hero-tag{display:inline-block;margin-top:18px;color:var(--cyan);font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+section{padding:82px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px}.section-kicker{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}.section-intro{max-width:600px}.tl{position:relative;margin:38px 0 0 8px;padding-left:30px;border-left:1px solid rgba(129,117,255,.55)}.ev{display:grid;grid-template-columns:105px 1fr;gap:8px 24px;position:relative;padding:0 0 34px}.ev:last-child{padding-bottom:0}.ev:before{content:"";position:absolute;left:-38px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px rgba(98,231,224,.12),0 0 18px rgba(98,231,224,.5)}.ev .y{font:800 31px/1.2 Rubik,sans-serif;color:var(--pink)}.ev h3{font-size:20px}.ev p{margin:0;font-size:15px}
+.alt-section{background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,0));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}.tile{position:relative;min-height:210px;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:25px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));transition:transform .25s,border-color .25s,background .25s}.tile:hover{transform:translateY(-5px);border-color:rgba(98,231,224,.5);background:linear-gradient(145deg,rgba(129,117,255,.17),rgba(255,255,255,.035))}.tile:after{content:attr(data-num);position:absolute;right:15px;top:0;font:800 72px Rubik,sans-serif;color:rgba(255,255,255,.045)}.tile h3{position:relative;z-index:1}.tile p{position:relative;z-index:1;font-size:14px;margin:0}.tile-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;margin-bottom:19px;background:rgba(129,117,255,.18);color:var(--cyan);font-size:21px}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px}.col{padding:28px;border:1px solid var(--line);border-radius:22px;background:var(--surface)}.col h3{display:flex;align-items:center;gap:10px}.col h3:before{content:"";width:9px;height:9px;border-radius:3px;background:var(--pink)}.col:nth-child(2) h3:before{background:var(--cyan)}.col ul{margin:14px 0 0;padding:0;list-style:none}.col li{position:relative;padding:9px 0 9px 23px;border-bottom:1px solid rgba(255,255,255,.06);color:var(--muted);font-size:15px}.col li:last-child{border:0}.col li:before{content:"";position:absolute;left:2px;top:19px;width:7px;height:7px;border-radius:50%;background:var(--pink)}.col:nth-child(2) li:before{background:var(--cyan)}
+.end{position:relative;overflow:hidden;padding:76px 0;background:linear-gradient(115deg,#6559db,#29215f 70%,#123f50);border-top:1px solid rgba(255,255,255,.15)}.end:after{content:"AI";position:absolute;right:5%;bottom:-100px;font:800 260px Rubik,sans-serif;color:rgba(255,255,255,.055);pointer-events:none}.end .wrap{position:relative;z-index:1}.end p.q{font:800 clamp(27px,4.2vw,45px)/1.2 Rubik,sans-serif;max-width:850px;color:#fff;letter-spacing:-.03em}.end p.s{margin-top:20px;color:#e1e2ff}.end .small-label{display:inline-block;margin-bottom:17px;color:var(--yellow);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}footer{padding:28px 0 38px;color:#858eaf;font-size:13px}footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+@media(max-width:760px){.navlinks{gap:12px;font-size:12px}.hero{padding:70px 0 65px}.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{display:block}.section-intro{margin-top:8px}}
+@media(max-width:540px){.wrap{width:min(100% - 30px,var(--max))}.nav{height:60px}.navlinks a:nth-child(2){display:none}.hero{padding:58px 0 60px}.hero .big{margin:30px 0 22px;-webkit-text-stroke:1.5px rgba(255,226,122,.85)}.hero p{font-size:16px}section{padding:62px 0}.tiles,.cols{grid-template-columns:1fr}.tile{min-height:0;padding:22px}.ev{grid-template-columns:1fr;gap:5px;padding-bottom:29px}.ev .y{font-size:27px}.tl{padding-left:24px}.ev:before{left:-32px}.end{padding:60px 0}.end:after{font-size:180px;bottom:-60px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap nav"><a class="brand" href="#top">AI<span>.</span> XXI</a><nav class="navlinks" aria-label="Навигация"><a href="#history">История</a><a href="#today">Применение</a><a href="#questions">Вопросы</a></nav></div></div>
+<header class="hero" id="top"><div class="wrap hero-inner">
+  <span class="eyebrow">2000–2026 · обзор технологий</span>
+  <div class="big" aria-hidden="true">XXI</div>
+  <h1>Как искусственный интеллект вышел из лабораторий в повседневную жизнь</h1>
+  <p>В начале века ИИ фильтровал спам и подбирал товары. Сегодня он пишет код, читает снимки, предсказывает структуру белков и ведёт разговор.</p>
+</div></header>
+
+<main>
+<section id="history"><div class="wrap">
+  <div class="section-kicker">Ключевые этапы</div><h2>Путь за 15 лет</h2>
+  <div class="tl" id="tl"></div>
+</div></section>
+
+<section class="alt-section" id="today" style="padding-top:78px"><div class="wrap">
+  <div class="section-kicker">Технологии вокруг нас</div><h2>Где ИИ работает сегодня</h2>
+  <p>Главное изменение века: ИИ стал инструментом почти в любой профессии.</p>
+  <div class="tiles">
+    <div class="tile" data-num="01"><div class="tile-icon">✚</div><h3>Медицина</h3><p>Алгоритмы помогают читать рентген, КТ и гистологию и искать кандидатов в лекарства. Решение остаётся за врачом.</p></div>
+    <div class="tile" data-num="02"><div class="tile-icon">⌬</div><h3>Наука</h3><p>AlphaFold предсказал структуры сотен миллионов белков и ускорил работу биологов.</p></div>
+    <div class="tile" data-num="03"><div class="tile-icon">▤</div><h3>Образование</h3><p>Ассистенты объясняют тему разными способами и подстраивают темп под ученика. Школы ищут новые способы оценки.</p></div>
+    <div class="tile" data-num="04"><div class="tile-icon">↗</div><h3>Транспорт</h3><p>Навигация, прогноз пробок и беспилотные такси в отдельных городах. Полной автономности на любых дорогах пока нет.</p></div>
+    <div class="tile" data-num="05"><div class="tile-icon">⌘</div><h3>Разработка и бизнес</h3><p>Помощники пишут и проверяют код, сводят документы, отвечают клиентам и разбирают данные.</p></div>
+    <div class="tile" data-num="06"><div class="tile-icon">✧</div><h3>Творчество</h3><p>Генерация текста, изображений, музыки и видео. Идёт спор об авторстве, правах и маркировке.</p></div>
+  </div>
+</div></section>
+
+<section id="questions" style="padding-top:78px"><div class="wrap">
+  <div class="section-kicker">Ответственное использование</div><h2>Что вызывает вопросы</h2>
+  <div class="cols">
+    <div class="col"><h3>Проблемы</h3><ul>
+      <li>Ошибки и выдуманные факты в уверенном тоне</li>
+      <li>Предвзятость из обучающих данных</li>
+      <li>Дипфейки и дезинформация</li>
+      <li>Приватность и чужие данные</li>
+      <li>Влияние на рынок труда</li></ul></div>
+    <div class="col"><h3>Ответы общества</h3><ul>
+      <li>Законы и стандарты, например регламент ЕС об ИИ</li>
+      <li>Проверка моделей до и после запуска</li>
+      <li>Маркировка сгенерированного контента</li>
+      <li>Человек отвечает за итоговое решение</li>
+      <li>Навык проверять результат, а не только спрашивать</li></ul></div>
+  </div>
+</div></section>
+</main>
+
+<div class="end"><div class="wrap">
+  <span class="small-label">Главная мысль</span><p class="q">Выигрывает тот, кто знает, что ИИ делает хорошо, где ошибается и за что отвечает человек.</p>
+  <p class="s">Первый шаг: выберите одну рабочую задачу, поручите ИИ черновик и проверьте результат.</p>
+</div></div>
+<footer><div class="wrap"><span>ИИ в XXI веке · учебный проект</span><span>Обзор носит общий характер. Даты и достижения приведены по открытым источникам.</span></div></footer>
+
+<script>
+var E=[
+ [2011,"Watson побеждает в Jeopardy!","Система IBM обыгрывает чемпионов викторины, а на смартфонах появляется голосовой помощник Siri."],
+ [2012,"Прорыв глубокого обучения","Нейросеть AlexNet резко улучшает распознавание изображений. Видеокарты становятся топливом для ИИ."],
+ [2016,"AlphaGo обыгрывает Ли Седоля","Программа побеждает сильнейшего игрока в го, игру, которую считали слишком сложной для машин."],
+ [2017,"Архитектура Transformer","Статья «Attention Is All You Need» вводит основу почти всех современных языковых моделей."],
+ [2020,"AlphaFold решает задачу белков","Модель предсказывает трёхмерную структуру белков с точностью, близкой к эксперименту."],
+ [2022,"ChatGPT выходит к массам","Чат-бот собирает миллионы пользователей за недели. ИИ перестаёт быть технологией для специалистов."],
+ [2023,"Мультимодальность и ассистенты","Модели работают с текстом, изображениями и кодом сразу и появляются в офисных программах и поиске."],
+ [2024,"Нобелевские премии за ИИ","Премию по физике получают Хопфилд и Хинтон, по химии Хассабис, Джампер и Бейкер."],
+ [2026,"Эпоха агентов","Модели берут на себя многошаговые задачи. Вопрос смещается с «что умеет» на «как это контролировать»."]
+];
+var tl=document.getElementById('tl');
+E.forEach(function(e){
+  var d=document.createElement('div');d.className='ev';
+  var y=document.createElement('div');y.className='y';y.textContent=e[0];
+  var b=document.createElement('div');
+  var h=document.createElement('h3');h.textContent=e[1];
+  var p=document.createElement('p');p.textContent=e[2];
+  b.appendChild(h);b.appendChild(p);d.appendChild(y);d.appendChild(b);tl.appendChild(d);
+});
+</script>
+</body>
+</html>
