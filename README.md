@@ -1,1 +1,1 @@
-# infinite-craft-ru.
+index.html
